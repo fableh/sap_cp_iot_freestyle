@@ -5,8 +5,10 @@
 				<content>
 					<HBox width="100%" id="__hbox2">
 					    <items>
-					        <sap.smartbusiness.ui.control:NumericTile evaluationID="E.1522161082209" xmlns:sap.smartbusiness.ui.control="sap.smartbusiness.ui.control" id="__tile0"/>
-					        <sap.smartbusiness.ui.control:NumericTile evaluationID="E.1522748458929" xmlns:sap.smartbusiness.ui.control="sap.smartbusiness.ui.control" id="__tile6"/>
+					        <sap.smartbusiness.ui.control:NumericTile xmlns:sap.smartbusiness.ui.control="sap.smartbusiness.ui.control" evaluationID="E.1522161082209" id="__tile0"/>
+					        <sap.smartbusiness.ui.control:NumericTile xmlns:sap.smartbusiness.ui.control="sap.smartbusiness.ui.control" evaluationID="E.1522748458929" id="__tile6"/>
+					        <sap.smartbusiness.ui.control:ContributionTile evaluationID="E.1522161082209" xmlns:sap.smartbusiness.ui.control="sap.smartbusiness.ui.control" id="__tile14" dimension="time" contributionColor="Critical"/>
+					        <sap.smartbusiness.ui.control:ComparisonTile evaluationID="E.1522749269388" xmlns:sap.smartbusiness.ui.control="sap.smartbusiness.ui.control" id="__tile42" measureOne="Pitch_MIN" measureTwo="Pitch_MAX" measureThree="Pitch_LAST" colorOne="Good" colorTwo="Good" colorThree="Critical"/>
 					    </items>
 					</HBox>
 					<HBox width="100%" height="100%" id="__hbox0">
