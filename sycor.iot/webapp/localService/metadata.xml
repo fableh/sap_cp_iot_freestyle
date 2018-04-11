@@ -1,0 +1,335 @@
+<?xml version="1.0" ?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+	<edmx:DataServices m:DataServiceVersion="1.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+		xmlns:sap="http://www.sap.com/Protocols/SAPData">
+		<Schema Namespace="com.sap.appiot" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="DYN_ENT_com_sap_appiot_eventtypes__StandardEventType">
+				<Key>
+					<PropertyRef Name="EventType"></PropertyRef>
+				</Key>
+				<Property Name="EventType" Type="Edm.String"></Property>
+				<Property Name="High" Type="Edm.Int32"></Property>
+				<Property Name="Medium" Type="Edm.Int32"></Property>
+				<Property Name="Low" Type="Edm.Int32"></Property>
+			</EntityType>
+			<EntityType Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Pitch" sap:semantics="timeseries">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String"></Property>
+				<Property Name="Pitch.Pitch" Type="Edm.Double"></Property>
+				<Property Name="Pitch.Pitch.Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<EntityType Name="HierarchyElement">
+				<Key>
+					<PropertyRef Name="HierarchyId"></PropertyRef>
+					<PropertyRef Name="RootThingId"></PropertyRef>
+				</Key>
+				<Property Name="HierarchyId" Type="Edm.String"></Property>
+				<Property Name="HierarchyName" Type="Edm.String"></Property>
+				<Property Name="RootThingId" Type="Edm.String"></Property>
+				<Property Name="RootThingName" Type="Edm.String"></Property>
+				<Property Name="RootThingType" Type="Edm.String"></Property>
+				<Property Name="RootThingDescription" Type="Edm.String"></Property>
+				<Property Name="RootThingExternalId" Type="Edm.String"></Property>
+				<Property Name="HierarchyDescription" Type="Edm.String"></Property>
+				<Property Name="HierarchyExternalId" Type="Edm.String"></Property>
+			</EntityType>
+			<EntityType Name="Thing">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String" Nullable="false">
+					<Documentation>
+						<LongDescription>Thing unique ID</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ISOCode" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing Language code</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingDescription" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing description</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingName" Type="Edm.String" Nullable="false">
+					<Documentation>
+						<LongDescription>Thing name</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingExternalId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing external id</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingType" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing Type ID associated with the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ObjectGroup" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Object group used to create the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="BusinessPartnerName" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Business partner name associated for the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="BPLandlinePhoneNumber" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Landline phone number of Business partner</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="BPMobilePhoneNumber" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Mobile phone number of Business partner</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCustomerId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Business partner ID associated for the Thing</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingRegionDescription" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Region where Thing is located</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCountryDescription" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Country where the Thing is located</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCountryId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Country code where the Thing is located</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingCommunicationData" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing address details</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="ThingLocationId" Type="Edm.String">
+					<Documentation>
+						<LongDescription>Thing location ID</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="Latitude" Type="Edm.Double">
+					<Documentation>
+						<LongDescription>Latitude coordinates</LongDescription>
+					</Documentation>
+				</Property>
+				<Property Name="Longitude" Type="Edm.Double">
+					<Documentation>
+						<LongDescription>Longitude coordinates</LongDescription>
+					</Documentation>
+				</Property>
+				<NavigationProperty Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Pitch"
+					Relationship="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Pitch" FromRole="ThingEntities"
+					ToRole="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__PitchEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Humidity"
+					Relationship="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Humidity" FromRole="ThingEntities"
+					ToRole="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__HumidityEntities"></NavigationProperty>
+				<NavigationProperty Name="HierarchyElements" Relationship="com.sap.appiot.HierarchyElements" FromRole="ThingEntities"
+					ToRole="HierarchyElementsEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Accelerometer"
+					Relationship="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Accelerometer" FromRole="ThingEntities"
+					ToRole="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__AccelerometerEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Temperature"
+					Relationship="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Temperature" FromRole="ThingEntities"
+					ToRole="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__TemperatureEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_com_sap_appiot_eventtypes__StandardEventType"
+					Relationship="com.sap.appiot.DYN_ENT_com_sap_appiot_eventtypes__StandardEventType" FromRole="ThingEntities"
+					ToRole="DYN_ENT_com_sap_appiot_eventtypes__StandardEventTypeEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engine"
+					Relationship="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engine" FromRole="ThingEntities"
+					ToRole="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engineEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Image"
+					Relationship="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Image" FromRole="ThingEntities"
+					ToRole="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__ImageEntities"></NavigationProperty>
+				<NavigationProperty Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltage"
+					Relationship="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltage" FromRole="ThingEntities"
+					ToRole="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltageEntities"></NavigationProperty>
+			</EntityType>
+			<EntityType Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Image">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String"></Property>
+				<Property Name="Image.ImageName" Type="Edm.String"></Property>
+				<Property Name="Image.ImageName.Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<EntityType Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engine" sap:semantics="timeseries">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String"></Property>
+				<Property Name="engine.humidity" Type="Edm.Double"></Property>
+				<Property Name="engine.humidity.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="engine.temperature" Type="Edm.Double"></Property>
+				<Property Name="engine.temperature.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="engine.type" Type="Edm.String"></Property>
+				<Property Name="engine.type.Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<EntityType Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltage" sap:semantics="timeseries">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String"></Property>
+				<Property Name="BatteryVoltage.BatteryVoltage" Type="Edm.Double"></Property>
+				<Property Name="BatteryVoltage.BatteryVoltage.Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<EntityType Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Humidity" sap:semantics="timeseries">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String"></Property>
+				<Property Name="Humidity.Humidity" Type="Edm.Double"></Property>
+				<Property Name="Humidity.Humidity.Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<EntityType Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Accelerometer" sap:semantics="timeseries">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String"></Property>
+				<Property Name="Accelerometer.x" Type="Edm.Double"></Property>
+				<Property Name="Accelerometer.x.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="Accelerometer.y" Type="Edm.Double"></Property>
+				<Property Name="Accelerometer.y.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="Accelerometer.z" Type="Edm.Double"></Property>
+				<Property Name="Accelerometer.z.Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<EntityType Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Temperature" sap:semantics="timeseries">
+				<Key>
+					<PropertyRef Name="ThingId"></PropertyRef>
+				</Key>
+				<Property Name="ThingId" Type="Edm.String"></Property>
+				<Property Name="Temperature.Temperature" Type="Edm.Double" AttributeType="com.sap.iot.core.UoM"></Property>
+				<Property Name="Temperature.Temperature.UoM14597" Type="Edm.String" AttributeType="com.sap.iot.core.UoM"></Property>
+				<Property Name="Temperature.Temperature.LowerThreshold94046" Type="Edm.Double" AttributeType="com.sap.iot.core.LowerThreshold"></Property>
+				<Property Name="Temperature.Temperature.UpperThreshold95920" Type="Edm.Double" AttributeType="com.sap.iot.core.UpperThreshold"></Property>
+				<Property Name="Temperature.Temperature.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="Temperature.Temperature.LowerThreshold94046.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="Temperature.Temperature.UoM14597.Timestamp" Type="Edm.DateTimeOffset"></Property>
+				<Property Name="Temperature.Temperature.UpperThreshold95920.Timestamp" Type="Edm.DateTimeOffset"></Property>
+			</EntityType>
+			<Association Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Pitch">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Pitch" Multiplicity="1"
+					Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__PitchEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Humidity">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Humidity" Multiplicity="1"
+					Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__HumidityEntities"></End>
+			</Association>
+			<Association Name="HierarchyElements">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.HierarchyElement" Multiplicity="*" Role="HierarchyElementsEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Accelerometer">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Accelerometer" Multiplicity="1"
+					Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__AccelerometerEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Temperature">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Temperature" Multiplicity="1"
+					Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__TemperatureEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_com_sap_appiot_eventtypes__StandardEventType">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_com_sap_appiot_eventtypes__StandardEventType" Multiplicity="1"
+					Role="DYN_ENT_com_sap_appiot_eventtypes__StandardEventTypeEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engine">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engine" Multiplicity="1"
+					Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engineEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Image">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Image" Multiplicity="1"
+					Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__ImageEntities"></End>
+			</Association>
+			<Association Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltage">
+				<End Type="com.sap.appiot.Thing" Multiplicity="1" Role="ThingEntities"></End>
+				<End Type="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltage" Multiplicity="1"
+					Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltageEntities"></End>
+			</Association>
+			<EntityContainer Name="CompositeThingsAnalytics" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="DYN_ENT_com_sap_appiot_eventtypes__StandardEventTypes"
+					EntityType="com.sap.appiot.DYN_ENT_com_sap_appiot_eventtypes__StandardEventType"></EntitySet>
+				<EntitySet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Pitchs"
+					EntityType="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Pitch"></EntitySet>
+				<EntitySet Name="HierarchyElements" EntityType="com.sap.appiot.HierarchyElement"></EntitySet>
+				<EntitySet Name="Things" EntityType="com.sap.appiot.Thing"></EntitySet>
+				<EntitySet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Images"
+					EntityType="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Image"></EntitySet>
+				<EntitySet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engines"
+					EntityType="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engine"></EntitySet>
+				<EntitySet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltages"
+					EntityType="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltage"></EntitySet>
+				<EntitySet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Humiditys"
+					EntityType="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Humidity"></EntitySet>
+				<EntitySet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Accelerometers"
+					EntityType="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Accelerometer"></EntitySet>
+				<EntitySet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Temperatures"
+					EntityType="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Temperature"></EntitySet>
+				<AssociationSet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Pitch"
+					Association="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Pitch">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Pitchs" Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__PitchEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Humidity"
+					Association="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Humidity">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Humiditys"
+						Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__HumidityEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="HierarchyElements" Association="com.sap.appiot.HierarchyElements">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="HierarchyElements" Role="HierarchyElementsEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Accelerometer"
+					Association="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Accelerometer">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Accelerometers"
+						Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__AccelerometerEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Temperature"
+					Association="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Temperature">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Temperatures"
+						Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__TemperatureEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_com_sap_appiot_eventtypes__StandardEventType"
+					Association="com.sap.appiot.DYN_ENT_com_sap_appiot_eventtypes__StandardEventType">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_com_sap_appiot_eventtypes__StandardEventTypes" Role="DYN_ENT_com_sap_appiot_eventtypes__StandardEventTypeEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engine"
+					Association="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engine">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engines" Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__engineEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Image"
+					Association="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Image">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__Images" Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__ImageEntities"></End>
+				</AssociationSet>
+				<AssociationSet Name="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltage"
+					Association="com.sap.appiot.DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltage">
+					<End EntitySet="Things" Role="ThingEntities"></End>
+					<End EntitySet="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltages"
+						Role="DYN_ENT_iotae_sycor_leonardo_iot_fnd_hmi2018__BatteryVoltageEntities"></End>
+				</AssociationSet>
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
