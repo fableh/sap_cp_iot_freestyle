@@ -1,6 +1,6 @@
 ID: iot_freestyle
 _schema-version: '2.1'
-version: 0.0.3
+version: 0.0.4
 modules:
   - name: sycor.iot
     type: html5
@@ -88,6 +88,7 @@ modules:
           strictSSL: false
           name: BusinessSystem01
           url: '~{url}'
+      - name: syc-approuter-uaa
 resources:
   - name: IOTAS-ADVANCEDLIST-THING-ODATA
     properties:
