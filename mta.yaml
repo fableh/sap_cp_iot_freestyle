@@ -1,6 +1,6 @@
 ID: iot_freestyle
 _schema-version: '2.1'
-version: 0.0.4
+version: 0.0.7
 modules:
   - name: sycor.iot
     type: html5
@@ -113,7 +113,7 @@ resources:
       url: 'https://sapui5.hana.ondemand.com'
   - name: ssbruntime_cf
     properties:
-      url: 'https://sap-smartbusiness-service-ui-runtime.cfapps.eu10.hana.ondemand.com'
+      url: 'https://sap-smartbusiness-service-ui-runtime.cfapps.eu10.hana.ondemand.com/sap/smartbusiness/ui'
   - name: ssbservice
     properties:
       url: 'https://sap-smartbusiness-service-hcp-cf.cfapps.eu10.hana.ondemand.com'
