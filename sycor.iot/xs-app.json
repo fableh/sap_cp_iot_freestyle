@@ -38,11 +38,6 @@
 			"target": "$1",
 			"csrfProtection": false
 		}, {
-			"source": "^/resources/(.*)$",
-			"destination": "sapui52",
-			"target": "$1",
-			"csrfProtection": false
-		}, {
 			"source": "^.*/destinations/ssbservice/(.*)$",
 			"target": "$1",
 			"destination": "ssbservice",
@@ -65,6 +60,12 @@
 			"destination": "ssbruntime_cf",
 			"target": "$1",
 			"authenticationType": "xsuaa"
+		},
+		{
+			"source": "^/resources/(.*)$",
+			"destination": "sapui52",
+			"target": "$1",
+			"csrfProtection": false
 		}
 
 	]
